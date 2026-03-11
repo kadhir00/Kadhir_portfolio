@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Kadhir S — Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-3.css">
     <link rel="icon" type="image/png" href="favi.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
       <h1>KADHIR S</h1>
       <nav class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -27,31 +27,40 @@
       </nav>
     </div>
 <!-- Hero -->
-    <div class="top" id="home">
-      <div class="hero-content">
+  <div class="top" id="home">
 
-        <div class="hero-text">
-          <span class="hero-tag">MCA · Kumaraguru College of Technology, Coimbatore</span>
-          <h2 class="hero-name">Hi, I'm <span>Kadhir S.</span></h2>
-          <p class="hero-oneliner">Full-Stack Developer building responsive,<br>user-friendly web applications.</p>
-          <div class="hero-btns">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="kadhir_S.pdf" download class="btn-secondary">Download Resume</a>
-            <a href="#contact" class="btn-ghost">Contact Me</a>
-          </div>
-        </div>
+  <div class="hero-content">
 
-        <div class="hero-photo">
-          <img src="pp.heic" alt="Kadhir S">
-        </div>
+    <div class="hero-text">
 
+      <span class="hero-tag">
+        MCA · Kumaraguru College of Technology, Coimbatore
+      </span>
+
+      <h2 class="hero-name">
+        Hi, I'm <span>Kadhir</span>
+      </h2>
+
+      <p class="hero-oneliner">
+        Full-Stack Developer building responsive, scalable and user-focused
+        web applications with modern technologies.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View Projects</a>
+
+        <a href="kadhir_S.pdf" download="Kadhir_S_Resume.pdf" class="btn-secondary">
+          Download Resume
+        </a>
+
+        <a href="#contact" class="btn-ghost">Contact Me</a>
       </div>
 
-      <div class="hero-scroll">
-        <span>Scroll down</span>
-        <div class="scroll-line"></div>
-      </div>
     </div>
+
+  </div>
+
+</div>
 <!-- About -->
   <section id="about">
     <div class="about-inner">
@@ -272,28 +281,24 @@
         <div class="contact-left">
           <div class="contact-info-card">
             <div class="contact-info-item">
-              <span class="contact-info-label">Email</span>
+              <span class="contact-info-label">Email : </span>
               <a href="mailto:skadhir16@gmail.com" class="contact-info-value">skadhir16@gmail.com</a>
             </div>
             <div class="contact-info-divider"></div>
             <div class="contact-info-item">
-              <span class="contact-info-label">Phone</span>
+              <span class="contact-info-label">Phone : </span>
               <span class="contact-info-value">+91 87541 82659</span>
             </div>
             <div class="contact-info-divider"></div>
-            <div class="contact-info-item">
-              <span class="contact-info-label">Location</span>
-              <span class="contact-info-value">Chennai, Tamil Nadu</span>
-            </div>
           </div>
 
           <div class="contact-socials">
             <a href="https://www.linkedin.com/in/kadhir-s16" target="_blank" class="social-btn">
-              <span class="social-icon">in</span>
+               <img src="linkedin.png" alt="linked in ">
               LinkedIn
             </a>
             <a href="https://github.com/kadhir00" target="_blank" class="social-btn">
-              <span class="social-icon">gh</span>
+              <img src="github.png" alt="GitHub">
               GitHub
             </a>
           </div>
@@ -301,7 +306,7 @@
 
         <!-- Right: Form -->
         <div class="contact-right">
-          <form class="contact-form">
+          <form class="contact-form" id="contactForm">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -311,7 +316,8 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" id="submitBtn">Send Message →</button>
+            <p id="formStatus" style="text-align:center; font-size:0.84rem; margin-top:4px; min-height:20px;"></p>
           </form>
         </div>
 
@@ -324,5 +330,47 @@
       <p>© 2025 Kadhir S · MCA, Kumaraguru College of Technology</p>
     </footer>
 
+<script>
+
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const data = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+message: document.getElementById("message").value
+};
+
+try{
+
+const response = await fetch("http://localhost:5000/contact",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify(data)
+});
+
+const result = await response.json();
+
+if(result.success){
+document.getElementById("formStatus").innerText="Message sent successfully!";
+form.reset();
+}
+else{
+document.getElementById("formStatus").innerText="Failed to send message.";
+}
+
+}
+catch(error){
+document.getElementById("formStatus").innerText="Server error.";
+}
+
+});
+
+</script>
   </body>
 </html>

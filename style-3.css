@@ -1,0 +1,515 @@
+/* ===== PORTFOLIO THEME =====
+Primary Blue : #81A6C6
+Light Blue   : #96B4C3
+Beige        : #D7C8B3
+Taupe        : #BFB0A0
+Text Dark    : #2E2E2E
+BG Light     : #F4F6F8
+============================ */
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:72px;
+}
+
+body{
+font-family:'DM Sans',sans-serif;
+background:#F4F6F8;
+color:#2E2E2E;
+}
+
+/* HEADER */
+
+.header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:72px;
+padding:0 40px;
+background:#81A6C6;
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+}
+
+.header h1{
+font-family:"Syne";
+font-size:1.2rem;
+letter-spacing:2px;
+color:white;
+}
+
+.navbar ul{
+display:flex;
+list-style:none;
+gap:16px;
+}
+
+.navbar a{
+text-decoration:none;
+color:white;
+font-size:.85rem;
+padding:8px 14px;
+border-radius:6px;
+transition:.2s;
+}
+
+.navbar a:hover{
+background:rgba(255,255,255,.2);
+}
+/* HERO SECTION */
+.top{
+background:#81A6C6;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 40px;
+text-align:center;
+}
+
+.hero-content{
+max-width:750px;
+margin:auto;
+}
+
+.hero-text{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* HERO TAG */
+
+.hero-tag{
+background:rgba(255,255,255,.18);
+border:1px solid rgba(255,255,255,.35);
+padding:6px 18px;
+border-radius:20px;
+font-size:.85rem;
+margin-bottom:24px;
+color:white;
+}
+
+/* HERO NAME */
+
+.hero-name{
+font-family:"Syne",sans-serif;
+font-size:3.6rem;
+font-weight:800;
+color:white;
+margin-bottom:16px;
+}
+
+.hero-name span{
+color:#D7C8B3;
+}
+
+/* HERO TEXT */
+
+.hero-oneliner{
+font-size:1.15rem;
+color:#e7eef3;
+max-width:520px;
+margin-bottom:38px;
+line-height:1.7;
+}
+
+/* BUTTONS */
+
+.hero-btns{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+justify-content:center;
+}
+/* HERO BUTTONS */
+
+.hero-btns{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+background:#D7C8B3;
+padding:12px 26px;
+border-radius:8px;
+font-weight:600;
+text-decoration:none;
+color:#2E2E2E;
+transition:all .2s;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+background:#BFB0A0;
+}
+
+.btn-secondary{
+background:#96B4C3;
+padding:12px 26px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.2s;
+
+}
+
+.btn-secondary:hover{
+background:#7da3bb;
+transform:translateY(-2px);
+}
+
+.btn-ghost{
+border:1px solid rgba(255,255,255,.6);
+padding:12px 26px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+transition:.2s;
+}
+
+.btn-ghost:hover{
+background:rgba(255,255,255,.15);
+transform:translateY(-2px);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+gap:50px;
+}
+
+.hero-btns{
+justify-content:center;
+}
+
+.hero-oneliner{
+margin:auto;
+}
+
+}
+/* SECTIONS */
+
+section{
+padding:100px 60px;
+}
+
+.section-title{
+font-family:"Syne";
+font-size:2rem;
+margin-bottom:24px;
+}
+
+.section-tag{
+color:#81A6C6;
+font-size:.75rem;
+font-weight:600;
+margin-bottom:10px;
+display:block;
+}
+
+/* ABOUT */
+
+#about{
+background:white;
+padding:100px 60px;
+height:auto;
+min-height:100vh;
+display:block;
+}
+
+.about-inner{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:start;
+}
+
+.about-card{
+background:#F4F6F8;
+border:1px solid #D7C8B3;
+border-radius:12px;
+padding:24px;
+margin-bottom:16px;
+}
+
+/* SKILLS */
+
+#skills{
+background:#F4F6F8;
+padding:40px 60px;
+height:auto;
+min-height:100vh;
+}
+
+.skills-inner{
+max-width:1100px;
+margin:auto;
+}
+
+.skills-header{
+margin-bottom:40px;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:stretch;
+}
+
+.skill-category{
+background:white;
+border:1px solid #D7C8B3;
+border-radius:14px;
+padding:28px;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+height:100%;
+}
+
+.skill-cat-title{
+font-size:.8rem;
+margin-bottom:18px;
+color:#81A6C6;
+}
+
+.skill-item{
+display:grid;
+grid-template-columns:90px 1fr;
+align-items:center;
+gap:14px;
+margin-bottom:14px;
+}
+
+.skill-name{
+width:80px;
+font-size:.85rem;
+}
+
+.skill-bar{
+height:5px;
+background:#e3e3e3;
+border-radius:4px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:100%;
+background:#81A6C6;
+border-radius:4px;
+}
+
+.skill-fill{
+height:100%;
+background:#81A6C6;
+}
+
+.soft-skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.soft-tag{
+background:#e7edf2;
+padding:6px 14px;
+border-radius:20px;
+font-size:.9rem;
+}
+/* PROJECTS */
+
+#projects{
+background:#96B4C3;
+}
+
+.projects-inner{
+max-width:1100px;
+margin:auto;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+}
+
+.project-card{
+background:white;
+border-radius:14px;
+border:1px solid #D7C8B3;
+padding:26px;
+transition:.2s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+}
+
+.project-title{
+font-family:"Syne";
+margin:10px 0;
+}
+
+.project-tags{
+margin-top:14px;
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+.projects-header span{
+color:#f6f6f6;
+}
+
+.proj-tag{
+background:rgba(129,166,198,.15);
+padding:4px 10px;
+border-radius:6px;
+font-size:.75rem;
+}
+
+
+/* CONTACT */
+
+#contact{
+background:white;
+}
+
+.contact-inner{
+max-width:1100px;
+margin:auto;
+}
+
+.contact-header{
+margin-bottom:40px;
+}
+
+.contact-body{
+display:grid;
+grid-template-columns:1fr 1.5fr;
+gap:32px;
+}
+
+.contact-info-card{
+
+border:1px solid #D7C8B3;
+border-radius:12px;
+padding:24px;
+}
+.contact-info-card:hover{
+    background:#F4F6F8;
+}
+.contact-socials{
+margin-top:16px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.contact-socials img{
+width:16px;
+height:16px;
+vertical-align:middle;
+}
+
+.contact-socials a:hover{
+background:rgba(129,166,198,.15);
+}
+.social-btn{
+background:white;
+border:1px solid #D7C8B3;
+padding:10px 14px;
+border-radius:8px;
+text-decoration:none;
+color:#2E2E2E;
+}
+
+.contact-right{
+background:white;
+border:1px solid #D7C8B3;
+border-radius:12px;
+padding:28px;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-family:inherit;
+}
+
+.contact-form button{
+background:#81A6C6;
+color:white;
+border:none;
+padding:12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.contact-form button:hover{
+background:#96B4C3;
+}
+
+/* FOOTER */
+
+.foot{
+background:#81A6C6;
+color:white;
+text-align:center;
+padding:22px;
+font-size:.85rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.about-inner{
+grid-template-columns:1fr;
+}
+
+.skills-grid{
+grid-template-columns:1fr;
+}
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+.contact-body{
+grid-template-columns:1fr;
+}
+
+}
