@@ -220,6 +220,7 @@
           </div>
         </div>
 
+
       </div>
     </div>
   </section>
@@ -338,8 +339,9 @@ form.addEventListener("submit", async function(e){
 
 e.preventDefault();
 
+const nameValue = document.getElementById("name").value;
 const data = {
-name: document.getElementById("name").value,
+name: nameValue,
 email: document.getElementById("email").value,
 message: document.getElementById("message").value
 };
@@ -356,12 +358,14 @@ body: JSON.stringify(data)
 
 const result = await response.json();
 
+const statusEl = document.getElementById("formStatus");
+
 if(result.success){
-document.getElementById("formStatus").innerText="Message sent successfully!";
+statusEl.innerText = `Thanks, ${nameValue || "there"}! Your message has been sent.`;
 form.reset();
 }
 else{
-document.getElementById("formStatus").innerText="Failed to send message.";
+statusEl.innerText="Failed to send message.";
 }
 
 }
